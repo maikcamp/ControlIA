@@ -1,20 +1,20 @@
 # ControlIA
 Codigos del capitulo 4
 Import dependencias
-# TensorFlow is an open source machine learning library
+#TensorFlow is an open source machine learning library
 !pip install tensorflow==2.11.1 
 import tensorflow as tf
-# NumPy is a math library
+#NumPy is a math library
 import numpy as np
-# Matplotib is a graphing library
+#Matplotib is a graphing library
 import matplotlib.pyplot as plt
-# math is python's math library
+#math is python's math library
 import math
 
 # Grafica Senoidal
 #We'll generate this many sample datapoints
 samples = 1000
-# Set a "seed" value, so we get the same random numbers each time we run this
+#Set a "seed" value, so we get the same random numbers each time we run this
 #noteboo. ANy number can be user here
 SEED=1337
 np.random.seed(SEED)
@@ -29,3 +29,9 @@ y_values=np.sin(x_values)
 #Plot our data. The 'b.' argument tells the library to print blue dots.
 plt.plot(x_values, y_values,'b.')
 plt.show()
+
+# Add a small random number to each y value
+y_values += 0.1 * np.random.rand(*y_values.shape)
+# Plot out data
+plt.plot(x_values, y_values, 'b.')
+plt.show() 
